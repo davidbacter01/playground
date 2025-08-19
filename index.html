@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of the Forgotten Isle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <!-- UI Overlay -->
+        <div id="uiOverlay">
+            <!-- Health Bar -->
+            <div id="healthBar">
+                <div id="healthFill"></div>
+                <span id="healthText">100/100</span>
+            </div>
+            
+            <!-- Inventory -->
+            <div id="inventory">
+                <h3>Inventory</h3>
+                <div id="inventoryItems"></div>
+            </div>
+            
+            <!-- Quest Log -->
+            <div id="questLog">
+                <h3>Quest Log</h3>
+                <div id="questItems"></div>
+            </div>
+        </div>
+        
+        <!-- Dialogue Box -->
+        <div id="dialogueBox" class="hidden">
+            <div id="dialogueText"></div>
+            <div id="dialogueChoices"></div>
+            <button id="dialogueNext">Next</button>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="hidden">
+            <h2>Game Over</h2>
+            <p>You have fallen to the shadows...</p>
+            <button id="restartButton">Restart Game</button>
+        </div>
+        
+        <!-- Victory Screen -->
+        <div id="victoryScreen" class="hidden">
+            <h2>Victory!</h2>
+            <p>You have lifted the curse and escaped the island!</p>
+            <button id="newGameButton">New Game</button>
+        </div>
+    </div>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/sprite.js"></script>
+    <script src="js/entity.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/npc.js"></script>
+    <script src="js/item.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

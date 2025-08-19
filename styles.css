@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: #1a1a1a;
+    color: #ffffff;
+    overflow: hidden;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+#gameContainer {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    margin: 20px auto;
+    border: 2px solid #444;
+    background: #000;
+}
+
+#gameCanvas {
+    display: block;
+    background: #000;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+#uiOverlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    pointer-events: none;
+}
+
+#healthBar {
+    position: relative;
+    width: 200px;
+    height: 20px;
+    background: #333;
+    border: 2px solid #666;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#healthFill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #ff6666);
+    transition: width 0.3s ease;
+    width: 100%;
+}
+
+#healthText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#inventory, #questLog {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #666;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    pointer-events: auto;
+}
+
+#inventory h3, #questLog h3 {
+    color: #ffcc00;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+
+#inventoryItems, #questItems {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.inventory-item, .quest-item {
+    padding: 2px 0;
+    border-bottom: 1px solid #444;
+}
+
+.inventory-item:last-child, .quest-item:last-child {
+    border-bottom: none;
+}
+
+#dialogueBox {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 3px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    pointer-events: auto;
+}
+
+#dialogueText {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+#dialogueChoices {
+    margin-bottom: 15px;
+}
+
+.dialogue-choice {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    background: #333;
+    border: 2px solid #666;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dialogue-choice:hover {
+    background: #555;
+    border-color: #888;
+}
+
+#dialogueNext {
+    background: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#dialogueNext:hover {
+    background: #45a049;
+}
+
+#gameOverScreen, #victoryScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    border: 3px solid #666;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    pointer-events: auto;
+}
+
+#gameOverScreen h2 {
+    color: #ff0000;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+#victoryScreen h2 {
+    color: #ffcc00;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+#gameOverScreen p, #victoryScreen p {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #ccc;
+}
+
+#restartButton, #newGameButton {
+    background: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+#restartButton:hover, #newGameButton:hover {
+    background: #45a049;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Pixel art font styling */
+.pixel-text {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000;
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
